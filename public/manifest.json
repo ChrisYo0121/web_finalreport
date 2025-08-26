@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Screenshot to imgBB (Vite)",
+  "version": "1.0.0",
+  "description": "截圖並自動上傳到imgBB圖床，複製網址到剪貼簿",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://api.imgbb.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "assets/scissor.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["assets/content.css"]
+    }
+  ],
+  "icons": {
+    "128": "assets/scissor.png"
+  },
+  "commands": {
+    "take-screenshot": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "開始截圖"
+    },
+    "full-screenshot": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      },
+      "description": "全視窗截圖"
+    }
+  }
+}

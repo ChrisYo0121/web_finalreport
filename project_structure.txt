@@ -1,0 +1,30 @@
+/Users/chrismini/WebstormProjects/web_finalreport/
+├───package-lock.json         // 記錄 npm 安裝時的精確依賴版本，確保團隊成員使用相同的依賴版本
+├───***package.json***        // 專案的元數據文件，包含專案名稱、版本、腳本命令、依賴項等 (專案定義與依賴管理核心)
+├───***vite.config.js***      // Vite 建置工具的配置文件，用於設定開發伺服器、打包規則等 (專案建置與開發環境核心)
+└───***src/***                // 專案的原始碼目錄 (所有功能實現的根目錄)
+    ├───***App.vue***         // Vue.js 應用程式的主組件，通常是擴充功能彈出視窗或選項頁面的根組件 (UI 應用程式的入口)
+    ├───***background.js***   // 瀏覽器擴充功能的背景腳本，在瀏覽器後台運行，處理事件、API 調用（如截圖）和訊息通訊 (擴充功能後台邏輯核心)
+    ├───content-script.css    // 內容腳本的樣式文件，用於注入到網頁中修改頁面樣式
+    ├───***content-script.js*** // 內容腳本，注入到網頁中與 DOM 互動，例如處理滾動截圖的邏輯 (與網頁互動及主要功能實現核心)
+    ├───***main.js***         // Vue.js 應用程式的主要入口點，初始化 Vue 實例並掛載根組件 (Vue 應用程式啟動點)
+    ├───popup.css             // 擴充功能彈出視窗的樣式文件
+    ├───***popup.html***      // 擴充功能彈出視窗的 HTML 結構 (擴充功能 UI 介面入口)
+    ├───***background/***     // 存放背景腳本相關的模組 (後台功能模組化)
+    │   ├───capture.js        // 可能處理實際的標籤頁截圖邏輯
+    │   ├───scripting.js      // 可能與 chrome.scripting API 相關，用於注入腳本
+    │   └───storage.js        // 處理瀏覽器擴充功能的儲存（例如 chrome.storage）
+    ├───***components/***     // 存放可重用的 Vue.js UI 組件 (UI 介面構成要素)
+    │   ├───ActionButtons.vue // 用戶操作按鈕，如「開始截圖」、「上傳」、「取消」等
+    │   ├───Footer.vue        // 應用程式或彈出視窗的底部區塊，通常包含版權信息
+    │   ├───Header.vue        // 應用程式或彈出視窗的頂部區塊，通常包含標題、圖標
+    │   ├───HelpSection.vue   // 顯示幫助信息、使用指南或常見問題解答
+    │   ├───SettingsSection.vue // 提供用戶配置擴充功能設定的界面，如 API 密鑰輸入
+    │   └───StatusDisplay.vue // 向用戶顯示當前操作的狀態或提示信息
+    └───***content/***        // 存放內容腳本相關的模組 (內容腳本功能模組化)
+        ├───api.js            // 可能包含 API 互動邏輯（例如 imgBB 上傳）
+        ├───image.js          // 圖片處理工具（例如裁剪、拼接）
+        ├───scrolling.js      // 處理滾動行為的特定邏輯
+        ├───selection.js      // 處理區域選擇的邏輯
+        ├───ui.js             // 內容腳本的 UI 相關功能
+        └───utils.js          // 通用工具函數
